@@ -14,3 +14,6 @@ class ProductPageLocators():
     NAME_ADD_PRODUCT = (By.CSS_SELECTOR, ".alertinner strong")
     BASKET_PRICE = (By.CSS_SELECTOR, ".basket-mini")
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main p.price_color")
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
