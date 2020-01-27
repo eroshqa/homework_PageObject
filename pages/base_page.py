@@ -47,7 +47,7 @@ class BasePage():
         alert.send_keys(answer)
         alert.accept()
         try:
-            #WebDriverWait(self.browser, 3).until(EC.alert_is_present())
+            WebDriverWait(self.browser, 3).until(EC.alert_is_present())
             alert = self.browser.switch_to.alert
             alert_text = alert.text
             print(f"Your code: {alert_text}")
@@ -65,3 +65,7 @@ class BasePage():
     def go_to_basket(self):
         basket = self.browser.find_element(*BasePageLocators.BASKET)
         basket.click()
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"
